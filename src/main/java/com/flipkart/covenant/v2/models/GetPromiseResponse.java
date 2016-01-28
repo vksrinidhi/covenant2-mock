@@ -1,9 +1,8 @@
 package com.flipkart.covenant.v2.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
 
-import java.util.*;
+import java.util.Set;
 
 /**
  * Created by saurabh.agrawal on 20/01/16.

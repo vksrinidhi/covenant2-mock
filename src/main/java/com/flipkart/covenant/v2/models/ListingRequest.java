@@ -3,8 +3,6 @@ package com.flipkart.covenant.v2.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.ws.rs.DefaultValue;
-
 /**
 * Created by saurabh.agrawal on 25/01/16.
 */
