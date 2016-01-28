@@ -10,9 +10,6 @@ import javax.ws.rs.DefaultValue;
 */
 class ListingRequest {
 
-    /*
-    * key is an id, which must be used to corelate the request & response/error.
-    */
     @ApiModelProperty(value = "Any client chosen id, unique in the request scope, that " +
             "should be used to corelate the request and response",
             example = "listing-request-1")

@@ -23,5 +23,6 @@ class PolicyRequest {
     List<String> targetListingRequests;
 
     @JsonProperty(required = true)
+    @ApiModelProperty(example = "{\"type\":\"shipTogether\"}")
     Policy policy;
 }
