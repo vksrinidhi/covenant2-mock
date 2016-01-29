@@ -1,6 +1,7 @@
 package com.flipkart.covenant.v2.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 public class GetPromiseResponse {
 
     @JsonProperty
+    @ApiModelProperty("One response for each request")
     Set<ListingResponse> listings;
 
 }

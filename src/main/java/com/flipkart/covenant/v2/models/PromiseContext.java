@@ -1,6 +1,7 @@
 package com.flipkart.covenant.v2.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 
@@ -9,12 +10,13 @@ import java.util.Date;
  */
 public class PromiseContext {
     @JsonProperty
-    SalesChannel salesChannel;
+    SalesChannel salesChannel = SalesChannel.WEBSITE;
 
     @JsonProperty
-    CustomerSubscription subscription;
+    CustomerSubscription subscription = CustomerSubscription.REGULAR;
 
     @JsonProperty
-    Date startTime; // default to Time.now()
+    @ApiModelProperty("The start time to be considered for promise computation")
+    Date startTime = new Date();
 
 }

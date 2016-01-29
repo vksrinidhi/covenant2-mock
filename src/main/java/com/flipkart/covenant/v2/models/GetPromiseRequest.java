@@ -2,6 +2,7 @@ package com.flipkart.covenant.v2.models;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import java.util.Set;
 public class GetPromiseRequest {
 
     @JsonProperty(required = true)
+    @ApiModelProperty("A set of listing requests for which promise options are to be computed")
     Set<ListingRequest> listings;
 
     /*
@@ -19,11 +21,15 @@ public class GetPromiseRequest {
     * an explanation of the error situation, and indicate whether it is a temporary or permanent condition.
     */
     @JsonProperty
+    @ApiModelProperty("A set of policies that must be applied for computing promise options")
     Set<PolicyRequest> policies;
 
     @JsonProperty
     PromiseContext context;
 
+    @JsonProperty
+    @ApiModelProperty("Location of the customer")
+    Destination destination = new Destination();
 }
 
 

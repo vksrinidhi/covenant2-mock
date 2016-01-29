@@ -9,8 +9,8 @@ import java.util.Date;
  */
 public class TimeRange {
     @JsonProperty
-    Date lowerBound;
+    Date from;
 
     @JsonProperty
-    Date upperBound;
+    Date to;
 }
