@@ -1,4 +1,4 @@
-package com.flipkart.covenant.v2.models;
+package com.flipkart.covenant.v2.models.request;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -12,6 +12,6 @@ import io.swagger.annotations.ApiModel;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "type")
-@JsonSubTypes(@JsonSubTypes.Type(value = ShipTogether.class, name = "shipTogether"))
+@JsonSubTypes(@JsonSubTypes.Type(value = ShipTogether.class, name = "SHIP_TOGETHER"))
 public abstract class Policy {
 }

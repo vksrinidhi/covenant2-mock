@@ -1,26 +1,28 @@
-package com.flipkart.covenant.v2.models;
+package com.flipkart.covenant.v2.models.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
 * Created by saurabh.agrawal on 25/01/16.
 */
-class ListingResponse { // extends EnumMap<Aspect, Promiseable> {
+@Data
+public class ListingResponse {
 
     @ApiModelProperty(value = "The id of the corresponding listing request",
             example = "listing-request-1")
     @JsonProperty(required = true)
-    String listingRequestId;
+    private String listingRequestId;
 
     @ApiModelProperty(value = "The listing availability information")
     @JsonProperty
-    AvailabilityResponse availability;
+    private AvailabilityResponse availability;
 
     @ApiModelProperty(value = "The list of services that can be offered")
     @JsonProperty
-    List<ServiceabilityResponse> serviceability;
+    private Collection<ServiceabilityResponse> serviceability;
 
 }

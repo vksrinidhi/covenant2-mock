@@ -1,38 +1,46 @@
-package com.flipkart.covenant.v2.models;
+package com.flipkart.covenant.v2.models.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.util.List;
 
 /**
 * Created by saurabh.agrawal on 25/01/16.
 */
-class ListingRequest {
+@Data
+public class ListingRequest {
 
     @ApiModelProperty(value = "Any client chosen id, unique in the request scope, that " +
             "should be used to corelate the request and response",
             example = "listing-request-1")
     @JsonProperty(required = true)
-    String id;
+    private final String id;
 
     @JsonProperty(required = true)
     @ApiModelProperty(example = "LSTMOBE6KK93JG5WKB27FPDX7")
-    String listingId;
+    private final String listingId;
 
-    @JsonProperty(required = true)
+    @JsonProperty
     @ApiModelProperty(value = "Selling price of the listing",
             example = "10999")
-    int price;
+    private Integer price;
 
     @JsonProperty
     @ApiModelProperty(value = "Number of units of the listing",
             allowableValues = "range[1, infinity]", example = "1")
-    int quantity = 1;
+    private int quantity = 1;
 
     @JsonProperty
-    AvailabilityRequest availabilityRequest = new AvailabilityRequest();
+    private AvailabilityRequest availabilityRequest = new AvailabilityRequest();
 
     @JsonProperty
     @ApiModelProperty("The services for which promise is requested")
-    ServiceRequest serviceRequest = new ServiceRequest();
+    private ServiceRequest serviceRequest = new ForwardServiceRequest();
+
+    @JsonProperty
+    @ApiModelProperty(value = "If specified, inventory is only considered from these sources")
+    private List<String> sources;
 
 }

@@ -1,11 +1,7 @@
 package com.flipkart.covenant.v2.resources;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.flipkart.covenant.v2.models.GetPromiseRequest;
-import com.flipkart.covenant.v2.models.GetPromiseResponse;
-import com.flipkart.covenant.v2.models.Policy;
-import com.flipkart.covenant.v2.models.ShipTogether;
+import com.flipkart.covenant.v2.models.request.GetPromiseRequest;
+import com.flipkart.covenant.v2.models.response.GetPromiseResponse;
 import io.swagger.annotations.*;
 
 import javax.ws.rs.POST;

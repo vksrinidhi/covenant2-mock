@@ -1,4 +1,4 @@
-package com.flipkart.covenant.v2.models;
+package com.flipkart.covenant.v2.models.request;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
@@ -7,6 +7,6 @@ import io.swagger.annotations.ApiModel;
  * Created by saurabh.agrawal on 21/01/16.
  */
 @ApiModel(parent = Policy.class)
-@JsonTypeName("shipTogether")
+@JsonTypeName("SHIP_TOGETHER")
 public class ShipTogether extends Policy {
 }
