@@ -1,22 +1,23 @@
 package com.flipkart.covenant.v2.models.request;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * Created by saurabh.agrawal on 29/01/16.
+ * Specifies the location of the customer.
+ *
+ * @see com.flipkart.covenant.v2.models.request.Address
+ * @see com.flipkart.covenant.v2.models.request.PickupCenter
+ * @see com.flipkart.covenant.v2.models.request.Pincode
  */
-public class Location {
-    public enum Type {
-        PINCODE,
-        ADDRESS,
-        PICKUP_HUB
-    }
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Address.class, name = "ADDRESS"),
+        @JsonSubTypes.Type(value = PickupCenter.class, name = "PICKUP_HUB"),
+        @JsonSubTypes.Type(value = Pincode.class, name = "PINCODE")
+})
+public interface Location {
 
-    @JsonProperty
-    Type type = Type.PINCODE;
-
-    @JsonProperty
-    @ApiModelProperty(example = "560102")
-    String id;
 }

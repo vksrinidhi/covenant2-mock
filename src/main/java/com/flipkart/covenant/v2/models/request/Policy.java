@@ -5,13 +5,17 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.swagger.annotations.ApiModel;
 
 /**
- * Created by saurabh.agrawal on 20/01/16.
+ * A policy is a rule that must be applied on multiple {@code ListingRequest}
  */
 @ApiModel(discriminator = "type",
         subTypes = ShipTogether.class)
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "type")
-@JsonSubTypes(@JsonSubTypes.Type(value = ShipTogether.class, name = "SHIP_TOGETHER"))
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = BuyTogether.class, name = "BUY_TOGETHER"),
+        @JsonSubTypes.Type(value = PickTogether.class, name = "PICK_TOGETHER"),
+        @JsonSubTypes.Type(value = ShipTogether.class, name = "SHIP_TOGETHER")
+})
 public abstract class Policy {
 }

@@ -8,7 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 /**
- * Created by saurabh.agrawal on 27/01/16.
+ * Jersey resource class for all operations on the Promise entity
  */
 @SwaggerDefinition(
         info = @Info(
@@ -28,11 +28,19 @@ import javax.ws.rs.Path;
 @Path("promises")
 public class PromiseResource {
 
+    /**
+     * Returns promise options for the listings requested.<p>
+     * <b>Note:</b> No resource like inventory or vendor capacity will be reserved by this method.
+     *
+     * @param   request The request parameters
+     * @return  The response containing a list of promise options.
+     * @see com.flipkart.covenant.v2.models.request.GetPromiseRequest
+     * @see com.flipkart.covenant.v2.models.response.GetPromiseResponse
+     */
     @POST
     @ApiOperation(value = "Get Promise Options",
-            notes = "This API gives promise options for the requested listings, " +
-                    "assuming all requested policies can be applied.")
-    public GetPromiseResponse getPromise(GetPromiseRequest request) {
+            notes = "This API gives promise options for the requested listings")
+    public GetPromiseResponse getPromiseOptions(GetPromiseRequest request) {
         return null;
     }
 }

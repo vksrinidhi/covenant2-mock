@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import lombok.Data;
 
 /**
- * Created by saurabh.agrawal on 02/02/16.
+ * An FSE service to deliver inventory from a <i>source</i> to the customer.
  */
 @JsonTypeName("FORWARD")
 @Data

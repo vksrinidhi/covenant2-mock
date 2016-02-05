@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
- * Created by saurabh.agrawal on 01/02/16.
+ * Describes a filter for a type of service, allowing filtering on that service type's attributes
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
@@ -16,4 +16,3 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 abstract class ServiceFilter {
 }
-

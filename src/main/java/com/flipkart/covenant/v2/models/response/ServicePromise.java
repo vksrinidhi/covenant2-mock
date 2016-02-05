@@ -7,27 +7,44 @@ import lombok.Data;
 import java.util.Date;
 
 /**
-* Created by saurabh.agrawal on 25/01/16.
-*/
+ * Describes the serviceability of a specific service.
+ *
+ * @see ServiceDefinition
+ */
 @Data
-public class ServiceabilityResponse {
+public class ServicePromise {
 
+    /**
+     * A definition of the service being promised.
+     */
     @ApiModelProperty(value = "A service defintion")
     @JsonProperty
-    private ServiceOption service;
+    private ServiceDefinition service;
 
+    /**
+     * Whether the service can be provided.
+     */
     @ApiModelProperty("Whether the service can be provided")
     @JsonProperty
     private DetailedResponse<Boolean> isServiceable;
 
+    /**
+     * The time range in which this service can be fulfilled.
+     */
     @ApiModelProperty("The time range in which this service can be fulfilled")
     @JsonProperty
     private DetailedResponse<TimeRange> promiseTime;
 
+    /**
+     * The cost of fulfilling this service.
+     */
     @ApiModelProperty(value = "The cost of fulfilling this service", example = "40")
     @JsonProperty
-    private int price;
+    private int cost;
 
+    /**
+     * The cutoff after which this promised option must be recomputed.
+     */
     @ApiModelProperty("The cutoff after which this promised option must be recomputed")
     @JsonProperty
     private Date invalidAfter;

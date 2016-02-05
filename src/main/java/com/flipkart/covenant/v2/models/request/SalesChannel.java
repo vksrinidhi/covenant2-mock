@@ -1,7 +1,7 @@
 package com.flipkart.covenant.v2.models.request;
 
 /**
- * Created by saurabh.agrawal on 20/01/16.
+ * Types of sales channels
  */
 public enum SalesChannel {
     WEBSITE,

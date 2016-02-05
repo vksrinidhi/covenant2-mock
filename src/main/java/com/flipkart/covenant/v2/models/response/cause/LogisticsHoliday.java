@@ -1,16 +1,15 @@
 package com.flipkart.covenant.v2.models.response.cause;
 
-/**
- * Created by saurabh.agrawal on 01/02/16.
- */
-public class LogisticsHoliday extends Holiday {
-    @Override
-    public boolean isDisplayable() {
-        return false;
-    }
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.flipkart.covenant.v2.models.response.TimeRange;
 
-    @Override
-    public String getMessage() {
-        return null;
+/**
+ * A logistics partner's holiday.
+ */
+@JsonTypeName("LOGISTICS_HOLIDAY")
+public class LogisticsHoliday extends Holiday {
+
+    protected LogisticsHoliday(TimeRange holidayTime) {
+        super(holidayTime);
     }
 }

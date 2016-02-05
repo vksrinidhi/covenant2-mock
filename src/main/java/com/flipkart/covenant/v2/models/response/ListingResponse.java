@@ -7,22 +7,33 @@ import lombok.Data;
 import java.util.Collection;
 
 /**
-* Created by saurabh.agrawal on 25/01/16.
-*/
+ * Response corresponding to a {@code ListingRequest}.
+ *
+ * @see com.flipkart.covenant.v2.models.request.ListingRequest
+ */
 @Data
 public class ListingResponse {
 
+    /**
+     * The id of the corresponding {@code ListingRequest}.
+     */
     @ApiModelProperty(value = "The id of the corresponding listing request",
             example = "listing-request-1")
     @JsonProperty(required = true)
-    private String listingRequestId;
+    private final String listingRequestId;
 
+    /**
+     * The listing availability information.
+     */
     @ApiModelProperty(value = "The listing availability information")
     @JsonProperty
-    private AvailabilityResponse availability;
+    private final AvailabilityPromise availability;
 
-    @ApiModelProperty(value = "The list of services that can be offered")
+    /**
+     * The set of serviceability options that can be offered.
+     */
+    @ApiModelProperty(value = "The set of service options that can be offered")
     @JsonProperty
-    private Collection<ServiceabilityResponse> serviceability;
+    private final Collection<MultiServicePromise> serviceabilityOptions;
 
 }

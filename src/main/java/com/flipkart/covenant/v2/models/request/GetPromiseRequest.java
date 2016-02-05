@@ -9,30 +9,45 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by saurabh.agrawal on 19/01/16.
+ * Describes the request for the {@code getPromiseOptions(GetPromiseRequest)} method.
+ *
+ * @see com.flipkart.covenant.v2.resources.PromiseResource#getPromiseOptions(GetPromiseRequest)
  */
 @Data
 public class GetPromiseRequest {
 
+    /**
+     * A collection of {@code ListingRequest} <p>
+     * Required. Not null, not empty
+     */
     @JsonProperty(required = true)
     @ApiModelProperty("A set of listing requests for which promise options are to be computed")
     private final Collection<ListingRequest> listings;
 
-    /*
-    * The request will succeed only if all policies can be applied.
-    * If any policy cannot be applied, the server should throw a 5xx and include an entity containing
-    * an explanation of the error situation, and indicate whether it is a temporary or permanent condition.
-    */
+    /**
+     * A collection of {@code PolicyRequest} <p>
+     * Optional. Defaults to no policy request
+     */
     @JsonProperty
-    @ApiModelProperty("A set of policies that must be applied for computing promise options")
+    @ApiModelProperty("A set of policies which should be applied")
     private Collection<PolicyRequest> policies = new ArrayList();
 
+    /**
+     * The context in which this request should be processed <p>
+     * Optional. Defaults to a regular customer on the website
+     */
     @JsonProperty
-    private PromiseContext context = new PromiseContext();
+    @ApiModelProperty("The context in which this request should be processed")
+    private PromiseContext context = new PromiseContext(SalesChannel.WEBSITE, CustomerSubscription.REGULAR);
 
+    /**
+     * The location of the customer. <p>
+     * If no location is specified, promise options will be inaccurate. <p>
+     * Optional. Defaults to null.
+     */
     @JsonProperty
     @ApiModelProperty("Location of the customer")
-    private Location location = new Location();
+    private Location location;
 }
 
 

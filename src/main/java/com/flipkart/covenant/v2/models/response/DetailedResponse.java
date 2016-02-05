@@ -7,7 +7,9 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * Created by saurabh.agrawal on 01/02/16.
+ * Describes a value, along with a possible explanation/cause for the value.
+ *
+ * @param <T> The data type of the value being described.
  */
 @Data
 public class DetailedResponse<T> {

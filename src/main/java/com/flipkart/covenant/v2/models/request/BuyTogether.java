@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.annotations.ApiModel;
 
 /**
- * Policy requiring listings to be shipped together from a source to the customer.
+ * Policy indicating that targeted listings are being bought together.
  */
 @ApiModel(parent = Policy.class)
-@JsonTypeName("SHIP_TOGETHER")
-public class ShipTogether extends Policy {
+@JsonTypeName("BUY_TOGETHER")
+public class BuyTogether extends Policy {
 }

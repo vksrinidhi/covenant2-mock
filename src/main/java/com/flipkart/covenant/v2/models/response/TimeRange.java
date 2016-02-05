@@ -6,13 +6,19 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * Created by saurabh.agrawal on 28/01/16.
+ * A Date range
  */
 @Data
 public class TimeRange {
+    /**
+     * The start of the range
+     */
     @JsonProperty
     Date from;
 
+    /**
+     * The end of the range
+     */
     @JsonProperty
     Date to;
 }

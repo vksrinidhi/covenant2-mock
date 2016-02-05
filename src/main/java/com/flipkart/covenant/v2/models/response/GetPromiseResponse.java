@@ -7,17 +7,25 @@ import lombok.Data;
 import java.util.Collection;
 
 /**
- * Created by saurabh.agrawal on 20/01/16.
+ * Response to a {@code GetPromiseRequest}.
+ *
+ * @see com.flipkart.covenant.v2.resources.PromiseResource#getPromiseOptions(com.flipkart.covenant.v2.models.request.GetPromiseRequest)
  */
 @Data
 public class GetPromiseResponse {
 
+    /**
+     * One response for each {@code ListingRequest}.
+     */
     @JsonProperty
     @ApiModelProperty("One response for each listing request")
-    private Collection<ListingResponse> listings;
+    private final Collection<ListingResponse> listings;
 
+    /**
+     * One response for each {@code PolicyRequest}.
+     */
     @JsonProperty
     @ApiModelProperty("One response for each policy request")
-    private Collection<PolicyResponse> policies;
+    private final Collection<PolicyResponse> policies;
 
 }
