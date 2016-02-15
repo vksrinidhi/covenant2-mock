@@ -1,6 +1,7 @@
 package com.flipkart.covenant.v2.models.request;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Collection;
  * @see com.flipkart.covenant.v2.resources.PromiseResource#getPromiseOptions(GetPromiseRequest)
  */
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class GetPromiseRequest {
 
     /**

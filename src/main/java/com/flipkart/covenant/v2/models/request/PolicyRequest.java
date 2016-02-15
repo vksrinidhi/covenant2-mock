@@ -28,7 +28,7 @@ public class PolicyRequest {
      * <b>Required.</b>
      */
     @JsonProperty(required = true)
-    @ApiModelProperty(example = "{\"type\":\"shipTogether\"}")
+    @ApiModelProperty("The policy to be applied, it's type and any other required attributes.")
     private final Policy policy;
 
     /**
