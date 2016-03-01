@@ -16,5 +16,5 @@ import lombok.Data;
         @JsonSubTypes.Type(value = ReverseServiceDefinition.class, name = "REVERSE")
 })
 @Data
-abstract class ServiceDefinition {
+public abstract class ServiceDefinition {
 }

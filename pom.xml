@@ -45,12 +45,11 @@
                                     <destFileName>covenant2.war</destFileName>
                                 </artifactItem>
                             </artifactItems>
-                            <outputDirectory>/opt/jetty/mybase/webapps</outputDirectory>
+                            <outputDirectory>/Users/srinidhi.vk/Projects/mybase/webapps</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
